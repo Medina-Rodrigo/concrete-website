@@ -1,10 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
+type Photo = {
+  id: number;
+  image: string;
+  caption: string;
+  order: number;
+  created_at: string;
+};
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
