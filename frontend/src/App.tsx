@@ -23,33 +23,19 @@ function App() {
       setPhotos(data); // store the fetched photos into our photos array
       setLoading(false); // data has arrived, turn off the loading state
     })
+    .catch(err => {
+      setError (err.message); // store the error message so we can display it to the user
+      setLoading(false); // something went wrong, turn off loading anyway
+    });
 
   }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+
+    <div className="site-wrapper">
+
+    </div>
+
+};
 
 export default App
