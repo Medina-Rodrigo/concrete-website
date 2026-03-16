@@ -1,6 +1,28 @@
-/* Resets previous page css styling */
+/* -- Resets previous page css styling -- */
 *, *::before, &::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* -- Base styles - applies to the entire page -- */
+body {
+  background-color: #f2f0ed; /* warm off-white background */
+  color: #1b2a3b; /* deep navy for all text */
+  font-family: 'Segoe UI', sans-serif; /* clean modern font with fallback */
+}
+
+/* -- Site Wrapper - contains everything on the page -- */
+.site-wrapper {
+  min-height: 100vh; /* page is always at least as tall as the screen */
+  width: 100%; /* stretches full width of the browser */
+}
+
+/* -- Site Header - dark bar across the top of the page -- */
+.site-header {
+  background-color: #1b2a3b; /* deep navy background */
+  padding: 24px 32px; /* space inside the header so content isn't cramped */
+  text-align: center; /* centers the company name */
+  width: 100%; /* stretches full width of the page */
+}
+
