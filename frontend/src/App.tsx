@@ -50,9 +50,19 @@ function App() {
 
       {/* shows if backend works but no photos are uploaded */}
       {!loading && !error && photos.length == 0 && <p className="status-message">No photos yet, check back soon!</p>}
+      
+      {/* Masonry photo grid - only renders if photos exist */}
+      <div className="masonry-grid">
+        {photos.map(photo => (
+          <div key={photo.id} className="masonry-item"> {/* key helps React track each photo individually */}
+          <img src={photo.image} alt={photo.caption || 'Concrete Work'} /> {/* src is the image URL from Django, alt is fallback text for accessibility */}
+          {photo.caption && <p className="photo-caption">{photo.caption}</p>} {/* Only renders caption if one exists */}
+          </div>
+        ))}
+      </div>
     </main>
     </div>
-
-};
+  );
+}
 
 export default App
