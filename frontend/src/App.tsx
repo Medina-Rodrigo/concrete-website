@@ -31,8 +31,14 @@ function App() {
   }, []);
 
   return (
-
     <div className="site-wrapper">
+
+    {/* Header - displays company name, will be replaced w logo later */}
+    <header className="site-header">
+
+      {/* placeholder until real logo is ready */}
+      <h1 className="site-title">Medina Concrete Construction INC</h1>
+    </header>
 
     </div>
 
