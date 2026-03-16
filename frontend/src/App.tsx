@@ -40,6 +40,17 @@ function App() {
       <h1 className="site-title">Medina Concrete Construction INC</h1>
     </header>
 
+    {/* Main gallery section - displays all concrete work photos */}
+    <main className="gallery-section">
+      {/* shows while photos are being fetched */}
+      {loading && <p className="status-message">Loading...</p>}
+
+      {/* shows if something goes wrong */}
+      {error && <p className="status-message error">{error}</p>}
+
+      {/* shows if backend works but no photos are uploaded */}
+      {!loading && !error && photos.length == 0 && <p className="status-message">No photos yet, check back soon!</p>}
+    </main>
     </div>
 
 };
