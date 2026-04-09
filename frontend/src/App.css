@@ -26,3 +26,86 @@ body {
   width: 100%; /* stretches full width of the page */
 }
 
+/* -- Site Title - company name at the top of the page -- */
+.site-title {
+  color: #f2f0ed; /* warm off-white so it stands out against the navy header */
+  font-size: 1.8rem; /* rem is relative to the browser's base font size */
+  font-weight: 700; /* 700 is bold, scale goes from 100 (thin) to 900 (heaviest) */
+  letter-spacing: 0.05em; /* adds slight spacing between letters, feels more professional */
+  text-transform: uppercase; /* makes it all caps without changing the actual text in App.tsx */
+}
+
+/* -- Gallery Section - outer container for the photo gallery -- */
+.gallery-section {
+  padding: 40px 24px; /* breathing room around the gallery */
+  max-width: 1400px; /* prevents gallery from stretching too wide on large monitors */
+  margin: 0 auto; /* centers the gallery horizontally on the page */
+}
+
+/* -- Status Messages - loading, error, and empty state text -- */
+.status-message {
+  text-align: center; /* centers the message on the page */
+  color: #667; /* medium gray, subtle since it's temporary */
+  font-size: 1rem; /* standard readable size */
+  padding: 40px 0; /* plenty of vertical breathing room so it doesn't look cramped */
+}
+
+/* -- Error Message - overrides status message color for errors -- */
+.status-message.error {
+  color: #c0392b; /* red to signal something went wrong */
+}
+
+/* -- Masonry Grid - pinterest style photo layout -- */
+.masonry-grid {
+  columns: 3; /* splits the grid into 3 vertical columns */
+  column-gap: 16px; /* space between each column */
+}
+
+/* -- Masonry Item - individual photo card -- */
+.masonry-item {
+  break-inside: avoid; /* prevetns a single photo from being split across two columns */
+  margin-bottom: 16px; /* space between photos vertically */
+  border-radius: 6px; /* slightly rounded corners on the card */
+  overflow: hidden; /* keeps the image inside the rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* subtle shadow to make cards pop */
+}
+
+/* -- Images - fills the width of whatever column it's in -- */
+.masonry-tiem img {
+  width: 100%; /* fills the full width of its column automatically */
+  display: block; /* removes a tiny default gap that appears below images */
+  transition: transform 0.3s ease; /* smoothyl animates any transform changes */
+}
+
+/* -- Image Hover - subtle zoom effect when mousing over a photo -- */
+.masonry-item:hover img {
+  transform: scale(1.03); /* scales the image up to 103% of its size on hover */
+}
+
+/* -- Photo Caption - text below each photo -- */
+.photo-caption {
+  padding: 10px 12px; /* breathing room so text isn't pressed against the image or edges */
+  font-size: 0.85rem; /* slightly smaller than body text, captions are secondary info */
+  color: #f2f0ed; /* warm off-white text */
+  background-color: #2c3e50; /* dark-concrete-like grey, distinct fromt he navy header */
+  letter-spacing: 0.03em; /* slight spacing between letters feels more refined */
+}
+
+/* -- Tablet - swtiches to 2 columns on medium screens -- */
+@media (max-width: 900px) {
+  .masonry-grid {
+    columns: 2; /* two columns on tablet sized screens */
+  }
+}
+
+/* -- Mobile - switches to 1 column on small screens -- */
+@media (max-width: 500px) {
+  .masonry-grid {
+    columns: 1; /* single column on phone, full width photos like social media */
+  }
+
+  .site-title {
+    font-size: 1.3rem; /* slightly smaller title on phone so it doesn't overflow */
+  }
+}
+
