@@ -36,6 +36,24 @@ body {
   z-index: 100; /* ensures the header always sits on top of other elements */
 }
 
+/* -- Scroll Fade Overlay - fixed frosted edges that follow the viewport as you scroll -- */
+.scroll-fade-overlay {
+  position: fixed; /* stays in place as the user scrolls */
+  top: 0;
+  left: 0;
+  width: 100%; /* spans full width of the screen */
+  height: 100%; /* spans full height of the screen */
+  background: linear-gradient(
+    to bottom,
+    rgba(242, 240, 237, 0.95) 0%, /* strong fade at the very top */
+    transparent 15%, /* fully clear by 15% from the top */
+    transparent 85%, /* stays clear until 85% is down */
+    rgba(242, 240, 237, 0.95) 100% /* strong fade at the very bottom */
+  );
+  pointer-events: none; /* lets clicks pass through the photos underneath */
+  z-index: 50; /* sots above photos but below the sticky header */
+}
+
 /* -- Site Title - company name at the top of the page -- */
 .site-title {
   color: #f2f0ed; /* warm off-white so it stands out against the navy header */
@@ -50,14 +68,6 @@ body {
   padding: 80px 48px; /* breathing room around the gallery */
   max-width: 1100px; /* prevents gallery from stretching too wide on large monitors */
   margin: 0 auto; /* centers the gallery horizontally on the page */
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%, /* fully invisible at the very top */
-    black 10%, /* fully visible by 10% from the top */
-    black 90%, /* stays fully visible until 90% is down */
-    transparent 100% /* fades back to invisible at the very bottom */
-  );
 }
 
 

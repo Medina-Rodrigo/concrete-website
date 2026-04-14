@@ -39,6 +39,8 @@ function App() {
       {/* placeholder until real logo is ready */}
       <h1 className="site-title">Medina Concrete Construction INC</h1>
     </header>
+    {/* Fixed gradient overlay - creats frosted edge effect as photos scroll in and out */}
+    <div className="scroll-fade-overlay"></div>
 
     {/* Main gallery section - displays all concrete work photos */}
     <main className="gallery-section">
