@@ -65,7 +65,7 @@ body {
 /* -- Masonry Grid - pinterest style photo layout -- */
 .masonry-grid {
   columns: 3; /* splits the grid into 3 vertical columns */
-  column-gap: 16px; /* space between each column */
+  column-gap: 12px; /* space between each column */
 }
 
 /* -- Masonry Item - individual photo card -- */
@@ -78,11 +78,12 @@ body {
 }
 
 /* -- Images - fills the width of whatever column it's in -- */
-.masonry-tiem img {
+.masonry-item img {
   width: 100%; /* fills the full width of its column automatically */
   display: block; /* removes a tiny default gap that appears below images */
+  height: auto; /* lets height scale naturally with width */
+  object-fit: cover; /* crops the overflow from max-height cleanly */
   transition: transform 0.3s ease; /* smoothyl animates any transform changes */
-  height: auto; /* lets the height scale naturally with the width */
 }
 
 /* -- Image Hover - subtle zoom effect when mousing over a photo -- */
