@@ -44,8 +44,8 @@ body {
 
 /* -- Gallery Section - outer container for the photo gallery -- */
 .gallery-section {
-  padding: 40px 24px; /* breathing room around the gallery */
-  max-width: 1400px; /* prevents gallery from stretching too wide on large monitors */
+  padding: 80px 48px; /* breathing room around the gallery */
+  max-width: 1100px; /* prevents gallery from stretching too wide on large monitors */
   margin: 0 auto; /* centers the gallery horizontally on the page */
 }
 
