@@ -50,7 +50,16 @@ body {
   padding: 80px 48px; /* breathing room around the gallery */
   max-width: 1100px; /* prevents gallery from stretching too wide on large monitors */
   margin: 0 auto; /* centers the gallery horizontally on the page */
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, /* fully invisible at the very top */
+    black 10%, /* fully visible by 10% from the top */
+    black 90%, /* stays fully visible until 90% is down */
+    transparent 100% /* fades back to invisible at the very bottom */
+  );
 }
+
 
 /* -- Status Messages - loading, error, and empty state text -- */
 .status-message {
