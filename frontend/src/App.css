@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+html, body {
+  width: 100%; /* ensures the page stretches the full width of the browser */
+  margin: 0; /* removes any default margin the browser adds */
+  padding: 0; /* removes any default padding the browser adds */
+}
+
 /* -- Base styles - applies to the entire page -- */
 body {
   background-color: #f2f0ed; /* warm off-white background */
@@ -24,6 +30,7 @@ body {
   padding: 24px 32px; /* space inside the header so content isn't cramped */
   text-align: center; /* centers the company name */
   width: 100%; /* stretches full width of the page */
+  margin: 0; /* explicitly removes any inherited margin */
 }
 
 /* -- Site Title - company name at the top of the page -- */
