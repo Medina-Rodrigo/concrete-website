@@ -75,6 +75,7 @@ body {
   width: 100%; /* fills the full width of its column automatically */
   display: block; /* removes a tiny default gap that appears below images */
   transition: transform 0.3s ease; /* smoothyl animates any transform changes */
+  object-fit: cover; /* scales image to fill its space without stretching or clipping */
 }
 
 /* -- Image Hover - subtle zoom effect when mousing over a photo -- */

@@ -15,7 +15,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/photos/')
+    fetch('http://127.0.0.1:8000/api/photos/')
     .then(res => {if (!res.ok) throw new Error('Failed to fetch photos'); // if backend returns an error, stop and throw it
       return res.json(); // convert the raw response into usable JavaScript data
     })
