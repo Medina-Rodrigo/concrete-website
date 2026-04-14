@@ -31,6 +31,9 @@ body {
   text-align: center; /* centers the company name */
   width: 100%; /* stretches full width of the page */
   margin: 0; /* explicitly removes any inherited margin */
+  position: sticky; /* header stays at the top of the screen as you scroll */
+  top: 0; /* sticks to the very top of the viewport */
+  z-index: 100; /* ensures the header always sits on top of other elements */
 }
 
 /* -- Site Title - company name at the top of the page -- */
