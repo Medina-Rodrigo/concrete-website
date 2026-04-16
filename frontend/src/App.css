@@ -97,7 +97,16 @@ body {
   border-radius: 6px; /* slightly rounded corners on the card */
   overflow: hidden; /* keeps the image inside the rounded corners */
   box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* subtle shadow to make cards pop */
+  opacity: 0; /* starts invisible, waiting to be scrolled to */
+  transform: translateY(40px); /* starts 40px below natural position */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* smoothly animates both properties */
 }
+
+.masonry-item.visible {
+  opacity: 1; /* fully visible once scrolled into view */
+  transform: translateY(0); /* slides back into natural position */
+}
+
 
 /* -- Images - fills the width of whatever column it's in -- */
 .masonry-item img {
