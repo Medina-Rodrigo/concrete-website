@@ -30,6 +30,25 @@ function App() {
 
   }, []);
 
+  useEffect (() => {
+    // select all photo cards on the page
+    const items = document.querySelectorAll('.masonry-item');
+
+    //create an observer that watches for elements entering the viewport
+    const observer = new IntersectionObserver ((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { // if this card has entered the viewport
+          entry.target.classList.add('visible'); // add visible class to trigger CSS animation
+          observer.unobserve(entry.target); // stop watching it, only animate once
+        }
+      });
+    }, { threshold: 0.1 }); // fire when at least 10% of the card is visible
+    // tell the observer to watch every photo card
+    items.forEach(item => observer.observe(item));
+
+    // cleanup - stop observing when component unmounts
+    return () => observer.disconnect();
+  }, [photos]); // runs after photos are loaded into the DOM
   return (
     <div className="site-wrapper">
 
