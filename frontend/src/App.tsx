@@ -39,7 +39,12 @@ function App() {
       entries.forEach(entry => {
         if (entry.isIntersecting) { // if this card has entered the viewport
           entry.target.classList.add('visible'); // add visible class to trigger CSS animation
-          observer.unobserve(entry.target); // stop watching it, only animate once
+        }
+        else { // card is leaving the viewport
+          const top = entry.boundingClientRect.top; // get card's position relative to viewport
+          if (top > 0) { // card is below the viewport
+            entry.target.classList.remove('visible'); // hide it again
+          }
         }
       });
     }, { threshold: 0.1 }); // fire when at least 10% of the card is visible
